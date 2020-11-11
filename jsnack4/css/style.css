@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    animation-name: changecolor;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+
+.container #titolo {
+    font-size: 250%;
+    font-family: 'Lobster', cursive;
+}
+
+@keyframes changecolor {
+    0% {background-color: #E30B5C;}
+    50% {background-color: #FDE910;}
+    100% {background-color: #CCFF00;}
+}
