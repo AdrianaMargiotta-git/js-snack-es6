@@ -8,16 +8,27 @@ const abbigliamento = [
   {name: 'CrissCross', type: 'scarpe', color: 'black'},
   {name: 'Jenny', type: 'borsa', color: 'pink'},
 ];
-console.table(abbigliamento);
+console.log(abbigliamento);
 
 //mi creo una copia dell'array di partenza nel quale aggiungerò la nuova proprietà position
-const abbigliamentoDue = [...abbigliamento];
-
-//con map aggiungo la proprietà position con un lettera random
+const abbigliamentoDue = abbigliamento.map(a => Object.assign({}, a));
+//attribusco alla nuova proprietà position delle lettere casuali
 abbigliamentoDue.map((element) => {
   element.position = String.fromCharCode(97+Math.floor(Math.random() * 26)); //mi genero delle lettere casuali minuscole
 });
+console.log(abbigliamentoDue);
 console.table(abbigliamentoDue);
+
+
+/*******mi modifica anche l'array di partenza (sbagliato)***********/
+//mi modifica anche l'array di partenza
+//mi creo una copia dell'array di partenza nel quale aggiungerò la nuova proprietà position
+// const abbigliamentoDue = [...abbigliamento];
+// //con map aggiungo la proprietà position con un lettera random
+// abbigliamentoDue.map((element) => {
+//   element.position = String.fromCharCode(97+Math.floor(Math.random() * 26)); //mi genero delle lettere casuali minuscole
+// });
+// console.table(abbigliamentoDue);
 
 
 /*************ESERCIZIO SENZA L'USO DI ES6**********************/
