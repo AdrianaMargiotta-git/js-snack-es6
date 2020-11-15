@@ -8,10 +8,11 @@ console.log(nomi);
 
 //chiedo all'utente due numeri mediante prompt
 let arrayNumeriUser = []; //array contenente i due nuemri inseriti dall'utente
-    //mediante il ciclo for chiedo all'utente i due numeri e li pusho in arrayNumeriUser
-for (let index = 0; index < 2; index++) {
+
+//tramite un ciclo for chiedo all'utente i due numeri e li pusho in arrayNumeriUser
+for (let i = 0; i < 2; i++) {
     var numeroUser = parseInt(prompt("inserisci un numero da 0 a 5"));
-    //i numeri inseriti non possono ripetersi, non possono esseere minori o maggiori alla lunghezza dell'array nomi
+    //i numeri inseriti non possono ripetersi, non possono esseere minori o maggiori alla lunghezza dell'array nomi (gestione casi limite)
     while (arrayNumeriUser.includes(numeroUser) || (numeroUser < 0) || (numeroUser > 5)) {
         alert("Attenzione! Il numero inserito non è corretto");
         numeroUser = parseInt(prompt("inserisci un numero da 0 a 5"));
@@ -20,9 +21,15 @@ for (let index = 0; index < 2; index++) {
     console.log(arrayNumeriUser);
 };
 
+//ordino i numeri inseriti dall'utente in ordine crescente e gestione caso limite (utente inserisce prima il numero maggiore)
+arrayNumeriUser.sort();
+console.log(arrayNumeriUser);
+
 //creo un nuovo array con gli elementi che hanno una posizione compresa fra i numeri inseriti dall'utente
-let sliced = nomi.slice(arrayNumeriUser[0], (arrayNumeriUser[1] + 1)); //aggiungo il +1 per includere anche il nome finale finale
-console.log(sliced);
+const newNomi = nomi.filter((element, index) => {
+    return index >= arrayNumeriUser[0] && index <= arrayNumeriUser[1];
+});
+console.log(newNomi);
 
 
 /*************ESERCIZIO SENZA L'USO DI ES6**********************/
